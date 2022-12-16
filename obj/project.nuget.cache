@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hAuoRQsnj9aOP0yxoQ92kXRXLXiUbUJfYNcOWsy66Sekkgmk8KL2V04Ft9b/WfrCHCIs75+5bIF7Kj7WRtGOXw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\APA DeBu\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\KsonFriends\\KsonFriends.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\APA DeBu\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

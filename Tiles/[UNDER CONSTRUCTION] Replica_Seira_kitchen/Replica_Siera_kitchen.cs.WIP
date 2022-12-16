@@ -1,0 +1,93 @@
+using System;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.Audio;
+using Terraria.ModLoader.Utilities;
+using static Terraria.ModLoader.ModContent;
+using System.Collections.Generic;
+using Terraria.ModLoader.IO;
+using KsonFriends.ModPlayers;
+using Terraria.ObjectData;
+using Terraria.DataStructures;
+using KsonFriends.Items;
+
+/*namespace KsonFriends.Tiles							////////////////////////////UNDER CONSTRUCTION/////////////////////////
+{
+	public class Replica_Siera_kitchen : ModTile
+	{
+		public override void SetStaticDefaults()
+		{
+			// Properties
+			Main.tileLighted[Type] = true;
+			Main.tileFrameImportant[Type] = true;
+			Main.tileLavaDeath[Type] = false;
+			Main.tileWaterDeath[Type] = false;
+			Main.tileTable[Type] = false;
+			Main.tileSolidTop[Type] = true;
+			Main.tileNoAttach[Type] = true;
+			Main.tileBlockLight[Type] = false;
+
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			TileID.Sets.IgnoredByNpcStepUp[Type] = true; // This line makes NPCs not try to step up this tile during their movement. Only use this for furniture with solid tops.
+
+			AdjTiles = new int[] { TileID.WorkBenches };
+
+			// Placement
+			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
+			TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 }; //top row 16px tall, sec row 16px tall, bot row 16px tall with 2px connecting to the ground
+			TileObjectData.newTile.Origin = new Point16(2, 1); // To the right 2 tiles, down 1 tile
+			TileObjectData.addTile(Type);
+
+			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+
+			// Etc
+			ModTranslation name = CreateMapEntryName();
+			name.SetDefault("Work Bench");
+			AddMapEntry(new Color(200, 200, 200), name);
+		}
+
+		public override void NumDust(int x, int y, bool fail, ref int num)
+		{
+			num = fail ? 1 : 3;
+		}
+
+		public override void KillMultiTile(int x, int y, int frameX, int frameY)
+		{
+			Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 32, 16, ModContent.ItemType<Ribbon_summon>());
+		}
+	}
+}*/
+
+
+namespace KsonFriends.Item
+{
+	public class ExampleOret : ModTile
+	{
+		public override void SetStaticDefaults()
+		{
+			TileID.Sets.Ore[Type] = true;
+			Main.tileSolid[Type] = true;
+			Main.tileMergeDirt[Type] = true;
+			Main.tileBlockLight[Type] = true;
+			Main.tileShine[Type] = 900;
+			Main.tileShine2[Type] = true;
+			Main.tileSpelunker[Type] = true;
+			Main.tileOreFinderPriority[Type] = 350;
+
+			AddMapEntry(new Color(200, 200, 200), CreateMapEntryName());
+
+			DustType = 84;
+			ItemDrop = ModContent.ItemType<Items.DMJ_summon>();
+			HitSound = SoundID.Tink;
+
+			MineResist = 1.5f;
+			MinPick = 60;
+		}
+	}
+}
+

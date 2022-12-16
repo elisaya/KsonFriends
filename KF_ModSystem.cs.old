@@ -1,0 +1,36 @@
+using System;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.Audio;
+using Terraria.ModLoader.Utilities;
+using static Terraria.ModLoader.ModContent;
+using System.Collections.Generic;
+using Terraria.ModLoader.IO;
+
+namespace KsonFriends
+{
+	internal class KsonFriends : ModSystem
+		{
+			public int Kson_sword_kill_count;
+			public int Kson_sword_level;
+			public static bool MySpecialBool;
+
+			public override void OnWorldLoad()
+			{
+				MySpecialBool = false;
+			}
+
+			public override void LoadWorldData(TagCompound tag)
+			{
+				Kson_sword_kill_count = tag.GetInt("Kson_sword_kill_count");
+			}
+
+			public override void SaveWorldData(TagCompound tag)
+			{
+				tag["Kson_sword_kill_count"] = Kson_sword_kill_count;
+			}
+		}
+}
